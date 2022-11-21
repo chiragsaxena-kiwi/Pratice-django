@@ -1,0 +1,121 @@
+<!-- <h1>hello world </h1>
+<p>this is  my first web page </p>
+
+
+<img src="/delete-icon.svg" alt="">
+
+
+<html>
+<body>
+	<h1>GeeksForGeeks</h1>
+	<h2>
+	HTML a href Attribute
+</h2>
+	<a href="https://ide.geeksforgeeks.org/">
+		Click to open in the same tab
+	</a>
+	<br>
+	<a href="https://ide.geeksforgeeks.org/"
+	target="_blank">
+		Click to open in a different tab
+	</a>
+
+    <ul>
+        <li>chirag</li>
+        <li>saxena</li>
+        <li>ritesh</li>
+        <li>yadav</li>
+    </ul>
+
+    <ol>
+        <li>chirag</li>
+        <li>saxena</li>
+        <li>ritesh</li>
+        <li>yadav</li>
+    </ol>
+
+
+
+    <table>
+        <tr>
+          <th>Month</th>
+          <th>Savings</th>
+        </tr>
+        <tr>
+          <td>January</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>February</td>
+          <td>$80</td>
+        </tr>
+      </table>
+      <br>
+
+
+      <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <textarea rows="4" cols="50" name="comment" form="usrform">
+            Enter text here...</textarea><br>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+  <label for="html">HTML</label><br>
+<input type="checkbox" id="html" name="fav_language" value="HTML">
+  <label for="html">css</label><br>
+            
+        <input type="submit" value="Submit">
+      </form> 
+      <p>dqkdkwfjrjgirejgregrekgrkegfrke</p>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+
+    <style>
+        .book-item {
+            text-align: center;
+            border-style: solid;
+            border-width: thin;
+            width: 50%;
+            margin: auto;
+        }
+
+        .page-links {
+            text-align: center;
+            margin: auto;
+            width: 50%
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Total Number of Books: {{ count }}</h2>
+    <h2>Page Number: {{ page.number }}</h2>
+
+    {% for book in page.object_list %}
+    <div class="book-item">{{ book.title }} by {{ book.author}}</div> <br>
+    {% endfor %}
+
+    <div class="page-links">
+        {% if page.has_previous %}
+        <a href="{% url 'index' %}?page={{ page.previous_page_number }}">Previous Page</a>
+        {% endif %}
+        {% if page.has_next %}
+        <a href="{% url 'index' %}?page={{ page.next_page_number }}">Next Page</a>
+        {% endif %}
+    </div>
+
+</body>
+</html>

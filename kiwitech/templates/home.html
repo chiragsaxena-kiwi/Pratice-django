@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<h2>Buy for 5:00 RS</h2>
+{% for i in name%}
+{{forloop.counter}}{{name}}<br>
+{%endfor%}
+
+
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>This is a Hello page</h1>
+<p>This is a paragraph.</p>
+<form action ="{% url 'charge' %}" method="post">
+{% csrf_token %}
+<script src ="https://checkout.stripe.com/checkout.js"
+class="stripe-button"
+data-key="{{key}}"
+data-description="Payment Gateway"
+data-amount="500"
+data-location="auto">
+</script>
+</form>
+
+{% endblock %}
